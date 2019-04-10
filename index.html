@@ -68,7 +68,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   </head>
   <body>
-
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const seniorityFrom = '10/01/2009';
+            const lastExperienceFrom = '01/01/2019';
+            const container = document.querySelector('.js-last').innerText = DateFrom.getString(lastExperienceFrom);
+            const container2 = document.querySelector('.js-now').innerText = DateFrom.getString(seniorityFrom);
+            container.innerText = DateFrom.getString(lastExperienceFrom);
+            container2.innerText = DateFrom.getString(seniorityFrom);
+        })
+    </script>
     <div class="wrapper">
       <header>
         <h1>The best Unity developer ever</h1>
@@ -89,7 +98,10 @@ Skype: ms.shadowgirl<br/>
 
 
 <h3>Что по работе?</h3>
-<p>Опыт работы: <span style="color: grey;">//тут будет жабаскрипт отсчёта</span></p>
+<p>Опыт работы: <span style="color: grey;">//тут будет жабаскрипт отсчёта</span>
+        <br/>    One: <span class="js-last"></span><br>
+    Two: <span class="js-now"></span>
+        </p>
 
 <ul>
   <li>Январь 2019 - Настоящее время</li>
