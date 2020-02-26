@@ -20,7 +20,7 @@ DateFrom.getTime = function (date) {
   const year = new Date(date).getFullYear();
   const month = new Date(date).getMonth() + 1;
   let diffMonth = currentMonth - month;
-  const diffYear = diffMonth < 0 ? 0 : currentYear - year;
+  const diffYear = diffMonth < 0 && currentYear - year === 1 ? 0 : currentYear - year;
   // add current month
   diffMonth = Math.abs(diffMonth) + 1;
   return { year: diffYear, month: diffMonth };
