@@ -19,10 +19,10 @@ DateFrom.getTime = function (date) {
   const currentMonth = new Date().getMonth() + 1;
   const year = new Date(date).getFullYear();
   const month = new Date(date).getMonth() + 1;
-  const diffYear = currentYear - year;
-  let diffMonth = Math.abs(currentMonth - month);
+  let diffMonth = currentMonth - month;
+  const diffYear = diffMonth < 0 ? 0 : currentYear - year;
   // add current month
-  diffMonth += 1;
+  diffMonth = Math.abs(diffMonth) + 1;
   return { year: diffYear, month: diffMonth };
 }
 DateFrom.getString = function (time) {
