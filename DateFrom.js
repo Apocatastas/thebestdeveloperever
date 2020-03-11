@@ -16,13 +16,13 @@ DateFrom.plurar = function getNoun(number, one, two, five) {
 }
 DateFrom.getTime = function (date) {
   const currentYear = new Date().getFullYear();
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = new Date().getMonth();
   const year = new Date(date).getFullYear();
-  const month = new Date(date).getMonth() + 1;
+  const month = new Date(date).getMonth();
   let diffMonth = currentMonth - month;
   const diffYear = diffMonth < 0 && currentYear - year === 1 ? 0 : currentYear - year;
   // add current month
-  diffMonth = Math.abs(diffMonth) + 1;
+  diffMonth = Math.abs(diffMonth);
   return { year: diffYear, month: diffMonth };
 }
 DateFrom.getString = function (time) {
