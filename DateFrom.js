@@ -22,9 +22,7 @@ DateFrom.getTime = function (date) {
   let diffMonth = currentMonth - month;
   const diffYear = diffMonth < 0 && currentYear - year === 1 ? 0 : currentYear - year;
   // add current month
-  diffMonth = diffMonth > 0 ? diffMonth : 12 - month;
-    
-   // Math.abs(diffMonth);
+  diffMonth = diffMonth > 0 ? diffMonth : 12 - month + currentMonth;
   return { year: diffYear, month: diffMonth };
 }
 DateFrom.getString = function (time) {
