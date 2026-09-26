@@ -74,10 +74,10 @@
              <img src="./me.png" width="300px">
         </p>
         <p>
-          <strong>Филиппова Алла</strong>, 37 лет, Москва<br/>
+          <strong>Филиппова Алла</strong>, <span class="js-age"></span> лет, Москва<br/>
           состою в браке, двое детей
         </p>
-          <h3>Куда бежать?</h3>
+          <h3>Чё где</h3>
 
 <p>Telegram: <a href="tel:+79169301307">+79169301307</a><br/>
 <a href="mailto:apocatastas@gmail.com">apocatastas@gmail.com</a><br/>
@@ -86,7 +86,7 @@
   <a href="https://ru.linkedin.com/in/apocatastas">Linkedin</a><br/>
   
   <a href="https://t.me/apogodnota" target="_blank">Канал в Telegram</a><br/>
-        <a href="https://getit.agency/interview_woman_developer" target="_blank">Интервью</a> для GetIT</p>
+   <!--     <a href="https://getit.agency/interview_woman_developer" target="_blank">Интервью</a> для GetIT</p> -->
       
       
       </header>
@@ -151,7 +151,7 @@ Unity C# Developer<br/>
   </ul>
 
 
-<h3>Что она умеет?</h3>
+<h3>Умею:</h3>
 
 <p>Работать с недокументированным легаси, паттернами и кодстайлом. Разбираться как с программной, так и с аппаратной частью. Общаться и решать задачи, без лишней траты времени. Нацелена на результат и являюсь евангелистом чётких, выстроенных процессов в команде.</p>
 
@@ -184,14 +184,14 @@ Unity C# Developer<br/>
   </p>
   </li>
   </ol>
-<h3>Кто её научил?</h3>
+<h3>Образование и курсы</h3>
 
 <ul>
   <li>2018
 <p>Мастерская геймдизайна, Летняя Школа<br/>
 Направление "Разработка игр"<br/>
 Курс дополнительного образования (14 дней)<br/>
-Итог: основные механики игры типа City Builder (pet-project)</p>
+Итог: основные механики игры типа City Builder</p>
 </li>
 <li>2011
 <p>Московский институт электронной техники, Москва<br/>
@@ -212,10 +212,13 @@ Unity C# Developer<br/>
         document.addEventListener('DOMContentLoaded', () => {
             const seniorityFrom = '10/01/2009';
             const lastExperienceFrom = '08/02/2019';
+            const birthDate = '20/12/1988';
             const container = document.querySelector('.js-last');
             const container2 = document.querySelector('.js-now');
+            const container3 = document.querySelector('.js-age');
             container.innerText = DateFrom.getString(lastExperienceFrom);
             container2.innerText = DateFrom.getString(seniorityFrom);
+            container3.innerText = DateFrom.getString(birthDate);
         })
     </script>
 </body>
