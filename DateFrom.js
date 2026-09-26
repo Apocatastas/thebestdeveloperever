@@ -14,15 +14,23 @@ DateFrom.plurar = function getNoun(number, one, two, five) {
   }
   return five;
 }
-DateFrom.getTime = function (date) {
-  const currentYear = new Date().getFullYear();
-  const currentMonth = new Date().getMonth();
-  const year = new Date(date).getFullYear();
-  const month = new Date(date).getMonth();
-  let diffMonth = currentMonth - month > 0 ? currentMonth - month + 1 : 12 - month + currentMonth + 1;
-  let diffYear = diffMonth < 0 && currentYear - year === 1 ? 0 : currentYear - year - 1;
-  return { year: diffYear, month: diffMonth };
-}
+DateFrom.getTime = function (dateStr) {
+  const [y, m, d] = dateStr.split('-').map(Number); // для ISO 'YYYY-MM-DD'
+  const from = new Date(y, m - 1, d);
+  const now = new Date();
+
+  let years = now.getFullYear() - from.getFullYear();
+  let months = now.getMonth() - from.getMonth();
+  let days = now.getDate() - from.getDate();
+
+  if (days < 0) months--;
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return { year: years, month: months };
+};
 DateFrom.getString = function (time) {
   const { year, month } = this.getTime(time);
   let resultString = '';
